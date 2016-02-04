@@ -1,0 +1,7 @@
+name: JellteksGuilds
+version: 1.0
+main: net.maxipan.guild.Main
+commands:
+    guild:
+        description: The main Jellteks Guilds command. Run it for more information.
+        aliases: g
