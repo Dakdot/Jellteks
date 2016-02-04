@@ -15,7 +15,7 @@ public class MessageManager {
 	
 	private String[] prefix = {
 			ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "Jellteks Guilds" + ChatColor.DARK_GREEN + "] " + ChatColor.RESET,
-			ChatColor.GOLD + "[" + ChatColor.GREEN + "Jellteks Guilds" + ChatColor.GOLD + "] " + ChatColor.RESET,
+			ChatColor.GOLD + "[" + ChatColor.YELLOW + "Jellteks Guilds" + ChatColor.GOLD + "] " + ChatColor.RESET,
 			ChatColor.DARK_RED + "[" + ChatColor.RED + "Jellteks Guilds" + ChatColor.DARK_RED + "] " + ChatColor.RESET
 	};
 	
@@ -39,7 +39,7 @@ public class MessageManager {
 	
 	public void severe(Player p, String msg, boolean sound) {
 		if (sound) {
-			p.sendMessage(prefix[2] + msg);
+			p.sendMessage(prefix[2] + ChatColor.RED + msg);
 			p.playSound(p.getLocation(), "note.bassattack", 100, 100);
 		} else {
 			p.sendMessage(prefix[2] + msg);

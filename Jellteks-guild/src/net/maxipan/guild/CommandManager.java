@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import net.maxipan.guild.commands.Create;
+import net.maxipan.guild.commands.Setup;
 import net.maxipan.guild.commands.SubCommand;
 
 public class CommandManager implements CommandExecutor {
@@ -18,6 +19,7 @@ private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
 	
 	public void setup() {
 		commands.add(new Create());
+		commands.add(new Setup());
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
