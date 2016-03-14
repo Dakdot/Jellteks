@@ -34,7 +34,7 @@ private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
 		if (cmd.getName().equalsIgnoreCase("guild")) {
 			if (args.length == 0) {
 				for (SubCommand c : commands) {
-					MessageManager.getInstance().info(p, "/guild " + c.name() + " (" + aliases(c) + ")" + " - " + c.info(), false);
+					p.sendMessage(ChatColor.YELLOW + "/guild " + c.name() + " (" + aliases(c) + ")" + " - " + c.info());
 				}
 				return true;
 			}

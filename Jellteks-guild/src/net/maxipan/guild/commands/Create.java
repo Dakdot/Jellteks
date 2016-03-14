@@ -9,12 +9,12 @@ public class Create extends SubCommand {
 	@Override
 	public void onCommand(Player p, String[] args) {
 		if (args.length < 1) {
-			MessageManager.getInstance().severe(p, "Too little arguments! Please enter one argument.", true);
+			MessageManager.getInstance().severe(p, "Usage: /guild create <guild name>", true);
 			return;
 		}
 		
 		if (args.length > 1) {
-			MessageManager.getInstance().severe(p, "Too many arguments! Please enter only one argument. If you entered your guild name with spaces, know that spaces cannot be present.", true);
+			MessageManager.getInstance().severe(p, "Usage: /guild create <guild name>", true);
 			return;
 		}
 		

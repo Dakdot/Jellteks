@@ -1,17 +1,27 @@
 package net.maxipan.guild.commands;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import net.maxipan.guild.MessageManager;
 
 public class Setup extends SubCommand {
+	
+	ItemStack[] menuItem = { new ItemStack(Material.BARRIER), new ItemStack(Material.BOOK) };
+	ItemMeta[] menuItemMeta = { menuItem[0].getItemMeta(), menuItem[1].getItemMeta() };
+	
+	public void itemSetup() {
+		menuItemMeta[0].setDisplayName("Exit Options");
+		menuItem[0].setItemMeta(menuItemMeta[0]);
+	}
 
 	@Override
 	public void onCommand(Player p, String[] args) {
-		if (args.length != 0) {
-			MessageManager.getInstance().severe(p, "This command does not take arguments, therefore you can't run it with them.", true);
-			return;
-		}
 		
 		/*
 		 * if (player ain't in a guild || doesn't have guild permissions) {
@@ -20,6 +30,13 @@ public class Setup extends SubCommand {
 		 * 
 		 * this is commented because we still have to develop a system for storing guilds and the players in them
 		 */
+		
+		MessageManager.getInstance().good(p, "Opened guild setup dialog for guild: " + ChatColor.YELLOW + ChatColor.BOLD + "<guild name here>", true);
+		
+		Inventory menu = Bukkit.createInventory(null, 18, ChatColor.YELLOW + "GUILD OPTIONS");
+		menu.setItem(17, menuItem[0]);
+		
+		p.openInventory(menu);
 	}
 
 	@Override
