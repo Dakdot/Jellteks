@@ -1,0 +1,8 @@
+# +----------------------------------------------------+ #
+# <     Jellteks Guilds Global Configuration File      > #
+# <     This configuration file will apply to all      > #
+# <                      guilds.                       > #
+# +----------------------------------------------------+ #
+
+guildCreation:
+    chargeAmount: 1000.0

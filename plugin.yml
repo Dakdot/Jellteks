@@ -1,6 +1,10 @@
 name: JellteksGuilds
 version: 1.0
 main: net.maxipan.guild.Main
+author: wiiboy123
+authors: [Maxipan]
+website: http://www.jellteks.com
+depend: [Vault, WorldEdit]
 commands:
     guild:
         description: The main Jellteks Guilds command. Run it for more information.

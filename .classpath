@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Jellteks-guild/src"/>
+	<classpathentry kind="lib" path="Jellteks-guild/resource/craftbukkit-1.8.8.jar"/>
+	<classpathentry kind="lib" path="Jellteks-guild/resource/craftbukkit-1.9.jar"/>
+	<classpathentry kind="lib" path="Jellteks-guild/resource/Vault.jar"/>
+	<classpathentry kind="lib" path="Jellteks-guild/resource/worldedit-bukkit-6.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

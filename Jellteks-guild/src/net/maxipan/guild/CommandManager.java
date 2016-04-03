@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import net.maxipan.guild.commands.Create;
+import net.maxipan.guild.commands.Motd;
+import net.maxipan.guild.commands.SetMotd;
 import net.maxipan.guild.commands.Setup;
 import net.maxipan.guild.commands.SubCommand;
 
@@ -20,6 +22,8 @@ private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
 	public void setup() {
 		commands.add(new Create());
 		commands.add(new Setup());
+		commands.add(new Motd());
+		commands.add(new SetMotd());
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {

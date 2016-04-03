@@ -1,7 +1,10 @@
 package net.maxipan.guild;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Set;
 
@@ -113,12 +116,6 @@ public class Configuration {
 		this.config.set(path, value);
 	}
 
-	public void setHeader(String[] header) {
-		manager.setHeader(this.file, header);
-		this.comments = header.length + 2;
-		this.reloadConfig();
-	}
-
 	@SuppressWarnings("deprecation")
 	public void reloadConfig() {
 		this.config = YamlConfiguration.loadConfiguration(manager.getConfigContent(file));
@@ -131,6 +128,44 @@ public class Configuration {
 
 	public Set<String> getKeys() {
 		return this.config.getKeys(false);
+	}
+	
+	private void firstRun() throws Exception {
+		if (!file.exists()) {
+			file.getParentFile().mkdirs();
+			copy(Main.plugin.getResource("config.yml"), file);
+		}
+	}
+
+	private void copy(InputStream in, File file) {
+		try {
+			OutputStream out = new FileOutputStream(file);
+			byte[] buf = new byte[1024];
+			int len;
+			while ((len = in.read(buf)) > 0) {
+				out.write(buf, 0, len);
+			}
+			out.close();
+			in.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void saveYamls() {
+		try {
+			config.save(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void loadYamls() {
+		try {
+			config.load(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

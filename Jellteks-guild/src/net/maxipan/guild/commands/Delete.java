@@ -2,11 +2,21 @@ package net.maxipan.guild.commands;
 
 import org.bukkit.entity.Player;
 
+import net.maxipan.guild.MessageManager;
+
 public class Delete extends SubCommand {
 
 	@Override
 	public void onCommand(Player p, String[] args) {
-		// TODO Auto-generated method stub
+		/*
+		 * if (player DOES NOT HAVE permission) {
+		 * 	tell them they can't delete a guild;
+		 * 	return;
+		 * }
+		 */
+		
+		MessageManager.getInstance().severe(p, "Are you SURE you want to delete the guild: ", true);
+		MessageManager.getInstance().severe(p, "Run the command again to confirm.", true);
 		
 	}
 
@@ -17,7 +27,7 @@ public class Delete extends SubCommand {
 
 	@Override
 	public String info() {
-		return "Removes a guild's setting, all of it's players and disables it's use.";
+		return "Removes a guild's settings file, all of it's players and disables it's use.";
 	}
 
 	@Override
