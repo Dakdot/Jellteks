@@ -4,9 +4,17 @@
 # <                      guilds.                       > #
 # +----------------------------------------------------+ #
 
+#The following settings determine what will happen on guild creation.
 guildCreation:
     chargeAmount: 1000.0
     defaultTag: "DEFTAG"
     useColourCodesInTag: true
     defaultMotd: "This is the default guild MOTD."
-    
+
+#Settings that deal with guild MOTDS.
+guildMotd:
+
+#These settings deal with guild tags.
+guildTags:
+    #This setting determines how long a guild tag can be.
+    wordLimit: 4

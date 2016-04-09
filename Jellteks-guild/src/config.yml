@@ -5,4 +5,21 @@
 # +----------------------------------------------------+ #
 
 guildCreation:
-    chargeAmount: 1000.0
+    chargeAmount: 100000.0
+    defaultTag: "DEFTAG"
+    defaultMotd: "This is the default guild MOTD."
+    defaultTaxAmount: 3.0
+
+guildMotd:
+    allowColours: false
+
+guildTags:
+    wordLimit: 4
+    allowColours: true
+    chargeAmount: 100.0
+    
+guildTaxes:
+    collection:
+        hour: 17
+        minute: 00
+    

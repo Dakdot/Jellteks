@@ -2,23 +2,31 @@ package net.maxipan.guild.commands;
 
 import org.bukkit.entity.Player;
 
+import net.maxipan.guild.Main;
+import net.maxipan.guild.MessageManager;
+
 public class Motd extends SubCommand {
+	
+	String motd;
 
 	@Override
 	public void onCommand(Player p, String[] args) {
-		// TODO Auto-generated method stub
+		if (Main.plugin.guilds.getString("players." + p.getName()) == null) {
+			MessageManager.getInstance().severe(p, "You are not in a guild.", true);
+			return;
+		}
 		
+		motd = Main.plugin.guilds.getString(Main.plugin.guilds.getString("players." + p.getName()) + ".motd");
+		MessageManager.getInstance().info(p, "Guild MOTD: " + motd, false);
 	}
 
 	@Override
 	public String name() {
-		// TODO Auto-generated method stub
 		return "motd";
 	}
 
 	@Override
 	public String info() {
-		// TODO Auto-generated method stub
 		return "Shows a guild's message of the day.";
 	}
 

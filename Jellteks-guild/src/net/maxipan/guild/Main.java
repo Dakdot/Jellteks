@@ -34,6 +34,8 @@ public class Main extends JavaPlugin {
 		plugin = this;
 
 		log = getLogger();
+		
+		TaxManager.getInstance().tax();
 
 		CommandManager cm = new CommandManager();
 		cm.setup();

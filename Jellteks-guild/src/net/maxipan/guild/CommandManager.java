@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 
 import net.maxipan.guild.commands.Create;
 import net.maxipan.guild.commands.Motd;
-import net.maxipan.guild.commands.SetMotd;
 import net.maxipan.guild.commands.Setup;
 import net.maxipan.guild.commands.SubCommand;
+import net.maxipan.guild.commands.Tax;
 
 public class CommandManager implements CommandExecutor {
 	
@@ -23,7 +23,7 @@ private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
 		commands.add(new Create());
 		commands.add(new Setup());
 		commands.add(new Motd());
-		commands.add(new SetMotd());
+		commands.add(new Tax());
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -39,7 +39,7 @@ private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
 			if (args.length == 0) {
 				MessageManager.getInstance().info(p, "--------------Displaying Commands--------------", true);
 				for (SubCommand c : commands) {
-					p.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "/guild " + c.name() + " (" + aliases(c) + ") " + ChatColor.GOLD + c.info());
+					p.sendMessage(ChatColor.YELLOW + "/guild " + c.name() + " (" + aliases(c) + ") " + ChatColor.GOLD + c.info());
 				}
 				return true;
 			}
